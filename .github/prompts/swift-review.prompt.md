@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: code-reviewer
 description: Swift code review — protocol-oriented design, value semantics, ARC memory, Swift Concurrency, and idiomatic patterns
 ---
 

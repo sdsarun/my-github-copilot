@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: refactor-cleaner
 description: Clean up dead code, reduce duplication, and simplify structure without changing behavior
 ---
 

@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: build-error-resolver
 description: Fix Go build and compilation errors — undefined symbols, import cycles, type mismatches, and module issues
 ---
 

@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: pr-test-analyzer
 description: Pull request review — behavioral coverage analysis, missing tests, logic gaps, and risk assessment
 ---
 

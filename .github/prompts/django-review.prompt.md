@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: code-reviewer
 description: Django code review — ORM correctness, DRF patterns, migration safety, and security misconfigurations
 ---
 

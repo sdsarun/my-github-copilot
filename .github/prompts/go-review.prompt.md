@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: code-reviewer
 description: Go code review — idiomatic Go, concurrency, error handling, security, and performance
 ---
 

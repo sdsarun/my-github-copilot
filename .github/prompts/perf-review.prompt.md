@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: performance-optimizer
 description: Performance analysis — identify bottlenecks, algorithmic complexity, bundle size, and rendering issues
 ---
 

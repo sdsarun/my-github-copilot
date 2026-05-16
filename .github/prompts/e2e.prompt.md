@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: e2e-runner
 description: Generate or fix Playwright E2E tests for critical user flows
 ---
 

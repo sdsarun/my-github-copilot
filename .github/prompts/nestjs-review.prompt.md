@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: code-reviewer
 description: NestJS code review — module boundaries, validation, guards, interceptors, async correctness, and security
 ---
 

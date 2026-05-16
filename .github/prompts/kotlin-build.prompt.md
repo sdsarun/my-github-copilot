@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: build-error-resolver
 description: Fix Kotlin and Gradle build errors — unresolved references, type mismatches, coroutine context, and Android/KMP issues
 ---
 

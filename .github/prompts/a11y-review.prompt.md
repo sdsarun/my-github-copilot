@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: a11y-architect
 description: Accessibility review — WCAG 2.2 compliance, semantic HTML, keyboard navigation, screen reader compatibility, and color contrast
 ---
 

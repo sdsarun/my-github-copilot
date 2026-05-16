@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: database-reviewer
 description: Database review — SQL queries, schema design, indexes, security, and performance
 ---
 

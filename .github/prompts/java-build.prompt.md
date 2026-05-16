@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: build-error-resolver
 description: Fix Java and Spring/Quarkus build errors — Maven/Gradle, compilation errors, annotation processing, and dependency issues
 ---
 

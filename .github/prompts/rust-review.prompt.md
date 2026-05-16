@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: code-reviewer
 description: Rust code review — ownership, lifetimes, error handling, unsafe usage, and idiomatic patterns
 ---
 

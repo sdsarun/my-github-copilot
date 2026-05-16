@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: code-reviewer
 description: Java code review — Spring Boot / Quarkus, security, ORM correctness, async patterns, and code quality
 ---
 

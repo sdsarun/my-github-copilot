@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: architect
 description: Capture an architectural decision as a structured ADR — records context, alternatives, rationale, and consequences
 ---
 

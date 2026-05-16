@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: architect
 description: Architecture review — system design, component responsibilities, scalability, and trade-offs
 ---
 

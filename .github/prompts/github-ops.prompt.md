@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: code-explorer
 description: GitHub operations — triage issues, manage PRs, debug CI, prepare releases using the gh CLI
 ---
 

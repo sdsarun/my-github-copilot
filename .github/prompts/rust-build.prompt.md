@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: build-error-resolver
 description: Fix Rust build and compilation errors — borrow checker, lifetime issues, trait implementations, and Cargo problems
 ---
 

@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: type-design-analyzer
 description: Type design review — making illegal states unrepresentable, domain modeling with types, and encapsulation of invariants
 ---
 

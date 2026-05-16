@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: doc-updater
 description: Update or generate documentation — READMEs, JSDoc, changelogs, and codemaps
 ---
 

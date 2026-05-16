@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: code-reviewer
 description: Git workflow and PR preparation — write commit messages, draft PR descriptions, analyze branch changes, and prepare for review
 ---
 

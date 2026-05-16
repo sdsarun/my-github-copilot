@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: security-reviewer
 description: Deep security analysis — OWASP Top 10, secrets, auth, injection, and dependency risks
 ---
 

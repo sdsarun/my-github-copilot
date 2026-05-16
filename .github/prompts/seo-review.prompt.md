@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: code-reviewer
 description: SEO review — crawlability, indexability, Core Web Vitals, structured data, and meta tag coverage
 ---
 

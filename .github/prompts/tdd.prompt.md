@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: tdd-guide
 description: Test-driven development cycle — write the failing test first, then implement
 ---
 

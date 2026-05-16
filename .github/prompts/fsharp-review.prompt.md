@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: code-reviewer
 description: F# code review — functional idioms, Railway Oriented Programming, discriminated unions, and correctness patterns
 ---
 

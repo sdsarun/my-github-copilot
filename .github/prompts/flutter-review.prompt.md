@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: code-reviewer
 description: Flutter and Dart code review — widget architecture, state management, null safety, performance, and platform conventions
 ---
 

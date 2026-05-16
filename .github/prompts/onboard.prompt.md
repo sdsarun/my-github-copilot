@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: code-explorer
 description: Understand a new codebase fast — map the tech stack, entry points, architecture, and conventions in minutes
 ---
 

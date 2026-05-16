@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: code-reviewer
 description: TypeScript and JavaScript code review — type safety, async correctness, security, and idiomatic patterns
 ---
 

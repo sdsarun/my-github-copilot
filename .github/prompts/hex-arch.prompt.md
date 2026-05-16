@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: architect
 description: Design or review code using Hexagonal Architecture (Ports and Adapters) — domain independence, testability, and clean boundaries
 ---
 

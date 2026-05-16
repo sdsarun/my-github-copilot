@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: build-error-resolver
 description: Full verification loop — build, types, lint, tests, and coverage gate before committing or opening a PR
 ---
 

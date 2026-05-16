@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: code-reviewer
 description: Kotlin code review — coroutines, Jetpack Compose, clean architecture, and Android/KMP conventions
 ---
 

@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: security-reviewer
 description: Production readiness audit — check if an application is safe to ship by inspecting auth, data, error handling, env config, CI, and rollback
 ---
 

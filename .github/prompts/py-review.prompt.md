@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: code-reviewer
 description: Python code review — PEP 8, Pythonic idioms, type hints, security, and performance
 ---
 

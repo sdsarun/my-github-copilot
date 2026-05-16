@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: code-reviewer
 description: C++ code review — memory safety, modern C++ idioms, concurrency, and performance
 ---
 

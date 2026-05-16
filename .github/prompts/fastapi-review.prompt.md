@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: code-reviewer
 description: FastAPI code review — async correctness, dependency injection, Pydantic schemas, security, and production readiness
 ---
 

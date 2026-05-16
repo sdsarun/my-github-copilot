@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: code-reviewer
 description: Laravel code review — Eloquent N+1, validation, authorization, queues, security misconfigurations
 ---
 

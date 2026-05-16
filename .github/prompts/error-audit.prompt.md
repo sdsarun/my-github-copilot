@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: silent-failure-hunter
 description: Hunt for silent failures — swallowed errors, bad fallbacks, and missing error propagation
 ---
 

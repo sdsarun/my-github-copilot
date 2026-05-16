@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: build-error-resolver
 description: Fix Dart and Flutter build errors — null safety, pub dependency issues, missing implementations, and analyzer failures
 ---
 

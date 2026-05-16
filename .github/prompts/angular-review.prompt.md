@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: code-reviewer
 description: Angular code review — signals, change detection, routing, DI, reactive forms, and security
 ---
 

@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: architect
 description: Review API endpoint design — naming, HTTP methods, status codes, request/response structure
 ---
 

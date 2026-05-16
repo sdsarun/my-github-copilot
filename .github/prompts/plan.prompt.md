@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: planner
 description: Create a phased implementation plan before writing any code
 ---
 

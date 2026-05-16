@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: code-reviewer
 description: C# code review — .NET conventions, async/await, nullable reference types, security, and performance
 ---
 

@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: code-simplifier
 description: Simplify overly complex code — deep nesting, long functions, complex conditionals, and unnecessary abstractions
 ---
 

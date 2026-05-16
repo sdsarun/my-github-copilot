@@ -1,5 +1,5 @@
 ---
-mode: agent
+agent: mle-reviewer
 description: ML engineering review — data leakage, training reproducibility, evaluation correctness, serving safety, and monitoring
 ---
 
