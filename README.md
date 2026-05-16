@@ -44,54 +44,62 @@ github-copilot-sd/
 │
 ├── .github/
 │   ├── copilot-instructions.md            ← Always-on rules (auto-loaded)
-│   └── prompts/
-│       │
-│       │  — Core Workflows —
-│       ├── plan.prompt.md                 ← /plan
-│       ├── tdd.prompt.md                  ← /tdd
-│       ├── verify.prompt.md               ← /verify
-│       ├── prod-audit.prompt.md           ← /prod-audit
-│       ├── onboard.prompt.md              ← /onboard
-│       ├── code-review.prompt.md          ← /code-review
-│       ├── security-review.prompt.md      ← /security-review
-│       ├── build-fix.prompt.md            ← /build-fix
-│       ├── refactor.prompt.md             ← /refactor
-│       ├── simplify.prompt.md             ← /simplify
-│       ├── error-audit.prompt.md          ← /error-audit
-│       ├── arch-review.prompt.md          ← /arch-review
-│       ├── hex-arch.prompt.md             ← /hex-arch
-│       ├── perf-review.prompt.md          ← /perf-review
-│       ├── api-design.prompt.md           ← /api-design
-│       ├── db-review.prompt.md            ← /db-review
-│       ├── e2e.prompt.md                  ← /e2e
-│       ├── update-docs.prompt.md          ← /update-docs
-│       ├── pr-review.prompt.md            ← /pr-review
-│       ├── git-pr.prompt.md               ← /git-pr
-│       ├── adr.prompt.md                  ← /adr
-│       ├── github-ops.prompt.md           ← /github-ops
-│       ├── type-design.prompt.md          ← /type-design
-│       ├── a11y-review.prompt.md          ← /a11y-review
-│       ├── seo-review.prompt.md           ← /seo-review
-│       ├── mle-review.prompt.md           ← /mle-review
-│       │
-│       │  — Language Reviews —
-│       ├── ts-review.prompt.md            ← /ts-review
-│       ├── py-review.prompt.md            ← /py-review
-│       ├── go-review.prompt.md            ← /go-review
-│       ├── rust-review.prompt.md          ← /rust-review
-│       ├── java-review.prompt.md          ← /java-review
-│       ├── kotlin-review.prompt.md        ← /kotlin-review
-│       ├── swift-review.prompt.md         ← /swift-review
-│       ├── csharp-review.prompt.md        ← /csharp-review
-│       ├── cpp-review.prompt.md           ← /cpp-review
-│       ├── angular-review.prompt.md       ← /angular-review
-│       ├── nestjs-review.prompt.md        ← /nestjs-review
-│       ├── laravel-review.prompt.md       ← /laravel-review
-│       ├── django-review.prompt.md        ← /django-review
-│       ├── fastapi-review.prompt.md       ← /fastapi-review
-│       ├── flutter-review.prompt.md       ← /flutter-review
-│       └── fsharp-review.prompt.md        ← /fsharp-review
-│
+│   │
+│   ├── prompts/
+│   │   │
+│   │   │  — Core Workflows —
+│   │   ├── plan.prompt.md                 ← /plan
+│   │   ├── tdd.prompt.md                  ← /tdd
+│   │   ├── verify.prompt.md               ← /verify
+│   │   ├── prod-audit.prompt.md           ← /prod-audit
+│   │   ├── onboard.prompt.md              ← /onboard
+│   │   ├── code-review.prompt.md          ← /code-review
+│   │   ├── security-review.prompt.md      ← /security-review
+│   │   ├── build-fix.prompt.md            ← /build-fix
+│   │   ├── refactor.prompt.md             ← /refactor
+│   │   ├── simplify.prompt.md             ← /simplify
+│   │   ├── error-audit.prompt.md          ← /error-audit
+│   │   ├── arch-review.prompt.md          ← /arch-review
+│   │   ├── hex-arch.prompt.md             ← /hex-arch
+│   │   ├── perf-review.prompt.md          ← /perf-review
+│   │   ├── api-design.prompt.md           ← /api-design
+│   │   ├── db-review.prompt.md            ← /db-review
+│   │   ├── e2e.prompt.md                  ← /e2e
+│   │   ├── update-docs.prompt.md          ← /update-docs
+│   │   ├── pr-review.prompt.md            ← /pr-review
+│   │   ├── git-pr.prompt.md               ← /git-pr
+│   │   ├── adr.prompt.md                  ← /adr
+│   │   ├── github-ops.prompt.md           ← /github-ops
+│   │   ├── type-design.prompt.md          ← /type-design
+│   │   ├── a11y-review.prompt.md          ← /a11y-review
+│   │   ├── seo-review.prompt.md           ← /seo-review
+│   │   ├── mle-review.prompt.md           ← /mle-review
+│   │   │
+│   │   │  — Language Reviews —
+│   │   ├── ts-review.prompt.md            ← /ts-review
+│   │   ├── py-review.prompt.md            ← /py-review
+│   │   ├── go-review.prompt.md            ← /go-review
+│   │   ├── rust-review.prompt.md          ← /rust-review
+│   │   ├── java-review.prompt.md          ← /java-review
+│   │   ├── kotlin-review.prompt.md        ← /kotlin-review
+│   │   ├── swift-review.prompt.md         ← /swift-review
+│   │   ├── csharp-review.prompt.md        ← /csharp-review
+│   │   ├── cpp-review.prompt.md           ← /cpp-review
+│   │   ├── angular-review.prompt.md       ← /angular-review
+│   │   ├── nestjs-review.prompt.md        ← /nestjs-review
+│   │   ├── laravel-review.prompt.md       ← /laravel-review
+│   │   ├── django-review.prompt.md        ← /django-review
+│   │   ├── fastapi-review.prompt.md       ← /fastapi-review
+│   │   ├── flutter-review.prompt.md       ← /flutter-review
+│   │   ├── fsharp-review.prompt.md        ← /fsharp-review
+│   │   │
+│   │   │  — Build Fixers —
+│   │   ├── go-build.prompt.md             ← /go-build
+│   │   ├── rust-build.prompt.md           ← /rust-build
+│   │   ├── java-build.prompt.md           ← /java-build
+│   │   ├── kotlin-build.prompt.md         ← /kotlin-build
+│   │   └── dart-build.prompt.md           ← /dart-build
+│   │
 │   ├── agents/
 │   │   │  — Core Workflow Agents —
 │   │   ├── planner.agent.md               ← Plan features and refactors
@@ -127,48 +135,41 @@ github-copilot-sd/
 │   │   ├── bun-runtime/SKILL.md           ← Bun vs Node tradeoffs
 │   │   └── documentation-lookup/SKILL.md  ← Fetch live library docs
 │   │
-│   │  — Build Fixers —
-│       ├── go-build.prompt.md             ← /go-build
-│       ├── rust-build.prompt.md           ← /rust-build
-│       ├── java-build.prompt.md           ← /java-build
-│       ├── kotlin-build.prompt.md         ← /kotlin-build
-│       └── dart-build.prompt.md           ← /dart-build
-│
-├── instructions/
-│   │  — Always Active —
-│   ├── general.instructions.md            ← Coding standards (all files)
-│   ├── git.instructions.md                ← Git conventions (all files)
-│   ├── error-handling.instructions.md     ← Error handling patterns (all files)
-│   │
-│   │  — File-Type Specific —
-│   ├── testing.instructions.md            ← Unit test rules (*.test.*)
-│   ├── e2e.instructions.md                ← E2E test rules (*.spec.*)
-│   ├── api.instructions.md                ← API rules (routes/, api/)
-│   ├── backend.instructions.md            ← Service/repo layer
-│   ├── frontend.instructions.md           ← React rules (components/, *.tsx)
-│   ├── security.instructions.md           ← Security rules (auth/, payment/)
-│   │
-│   │  — Language / Framework —
-│   ├── golang.instructions.md             ← Go conventions (*.go)
-│   ├── rust.instructions.md               ← Rust conventions (*.rs)
-│   ├── python.instructions.md             ← Python conventions (*.py)
-│   ├── kotlin.instructions.md             ← Kotlin conventions (*.kt, *.kts)
-│   ├── swiftui.instructions.md            ← SwiftUI / Swift (*.swift)
-│   ├── angular.instructions.md            ← Angular components/services
-│   ├── nestjs.instructions.md             ← NestJS modules/controllers/services
-│   ├── nextjs.instructions.md             ← Next.js App Router (app/, pages/)
-│   ├── springboot.instructions.md         ← Spring Boot (*.java)
-│   ├── dotnet.instructions.md             ← .NET / C# (*.cs)
-│   ├── laravel.instructions.md            ← Laravel (*.php)
-│   ├── prisma.instructions.md             ← Prisma ORM (schema.prisma)
-│   ├── vite.instructions.md               ← Vite (vite.config.*)
-│   │
-│   │  — Data / Infrastructure —
-│   ├── postgres.instructions.md           ← PostgreSQL (*.sql, migrations/)
-│   ├── redis.instructions.md              ← Redis (cache/, redis/)
-│   ├── docker.instructions.md             ← Docker conventions
-│   ├── migrations.instructions.md         ← DB migration rules
-│   └── deployment.instructions.md         ← Deploy/k8s/terraform
+│   └── instructions/
+│       │  — Always Active —
+│       ├── general.instructions.md        ← Coding standards (all files)
+│       ├── git.instructions.md            ← Git conventions (all files)
+│       ├── error-handling.instructions.md ← Error handling patterns (all files)
+│       │
+│       │  — File-Type Specific —
+│       ├── testing.instructions.md        ← Unit test rules (*.test.*)
+│       ├── e2e.instructions.md            ← E2E test rules (*.spec.*)
+│       ├── api.instructions.md            ← API rules (routes/, api/)
+│       ├── backend.instructions.md        ← Service/repo layer
+│       ├── frontend.instructions.md       ← React rules (components/, *.tsx)
+│       ├── security.instructions.md       ← Security rules (auth/, payment/)
+│       │
+│       │  — Language / Framework —
+│       ├── golang.instructions.md         ← Go conventions (*.go)
+│       ├── rust.instructions.md           ← Rust conventions (*.rs)
+│       ├── python.instructions.md         ← Python conventions (*.py)
+│       ├── kotlin.instructions.md         ← Kotlin conventions (*.kt, *.kts)
+│       ├── swiftui.instructions.md        ← SwiftUI / Swift (*.swift)
+│       ├── angular.instructions.md        ← Angular components/services
+│       ├── nestjs.instructions.md         ← NestJS modules/controllers/services
+│       ├── nextjs.instructions.md         ← Next.js App Router (app/, pages/)
+│       ├── springboot.instructions.md     ← Spring Boot (*.java)
+│       ├── dotnet.instructions.md         ← .NET / C# (*.cs)
+│       ├── laravel.instructions.md        ← Laravel (*.php)
+│       ├── prisma.instructions.md         ← Prisma ORM (schema.prisma)
+│       ├── vite.instructions.md           ← Vite (vite.config.*)
+│       │
+│       │  — Data / Infrastructure —
+│       ├── postgres.instructions.md       ← PostgreSQL (*.sql, migrations/)
+│       ├── redis.instructions.md          ← Redis (cache/, redis/)
+│       ├── docker.instructions.md         ← Docker conventions
+│       ├── migrations.instructions.md     ← DB migration rules
+│       └── deployment.instructions.md     ← Deploy/k8s/terraform
 │
 └── docs/
     ├── 01-overview.md                     ← What is this and why
