@@ -1,5 +1,6 @@
 ---
-description: 'PostgreSQL database specialist for query optimization, schema design, security, and performance. Use when writing SQL, creating migrations, designing schemas, or troubleshooting database performance. Follows PostgreSQL and Supabase best practices.'
+name: database-reviewer
+description: "PostgreSQL database specialist for query optimization, schema design, security, and performance. Use when writing SQL, creating migrations, designing schemas, or troubleshooting database performance. Follows PostgreSQL and Supabase best practices."
 tools: [read, search]
 ---
 

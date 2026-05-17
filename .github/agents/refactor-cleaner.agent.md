@@ -1,5 +1,6 @@
 ---
-description: 'Dead code cleanup and code consolidation specialist. Use for removing unused code, duplicates, over-engineered abstractions, and refactoring for clarity. Runs analysis tools (knip, depcheck, ts-prune) to identify dead code and safely removes it.'
+name: refactor-cleaner
+description: "Dead code cleanup and code consolidation specialist. Use for removing unused code, duplicates, over-engineered abstractions, and refactoring for clarity. Runs analysis tools (knip, depcheck, ts-prune) to identify dead code and safely removes it."
 tools: [read, search, edit, execute]
 ---
 
@@ -64,7 +65,7 @@ npx eslint --rule 'no-unused-vars: error' src/
 ```typescript
 // ❌ Deep nesting
 if (user) {
-  if (user.role === 'admin') {
+  if (user.role === "admin") {
     if (user.active) {
       doAction();
     }
@@ -73,7 +74,7 @@ if (user) {
 
 // ✅ Guard clauses
 if (!user) return;
-if (user.role !== 'admin') return;
+if (user.role !== "admin") return;
 if (!user.active) return;
 doAction();
 

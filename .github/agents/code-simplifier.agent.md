@@ -1,5 +1,6 @@
 ---
-description: 'Simplifies and refines recently modified code for clarity, consistency, and maintainability while preserving behavior. Use after implementing a feature to clean up the code before committing.'
+name: code-simplifier
+description: "Simplifies and refines recently modified code for clarity, consistency, and maintainability while preserving behavior. Use after implementing a feature to clean up the code before committing."
 tools: [read, search, edit, execute]
 ---
 
@@ -12,7 +13,7 @@ You are a code simplification specialist. Your goal is cleaner, clearer code tha
 ```typescript
 // ❌ Unnecessary wrapping
 function getUser(id: string) {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     resolve(userRepository.findById(id));
   });
 }
@@ -59,7 +60,7 @@ for (const user of users) {
   names.push(user.name);
 }
 // ✅ Map
-const names = users.map(u => u.name);
+const names = users.map((u) => u.name);
 
 // ❌ Manual find
 let found: User | undefined;
@@ -70,7 +71,7 @@ for (const u of users) {
   }
 }
 // ✅ Find
-const found = users.find(u => u.id === id);
+const found = users.find((u) => u.id === id);
 ```
 
 ### Consistent style

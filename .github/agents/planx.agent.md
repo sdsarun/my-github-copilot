@@ -1,4 +1,5 @@
 ---
+name: planx
 description: "Expert planning specialist for complex features and refactoring. Use when implementing new features, architectural changes, or complex multi-file refactoring. Produces phased implementation plans with dependencies, risks, and step-by-step actions."
 tools: [search/codebase, read, read/problems, web, vscode/memory, execute/testFailure, agent]
 agents: [Explore]

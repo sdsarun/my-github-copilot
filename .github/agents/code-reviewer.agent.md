@@ -1,5 +1,6 @@
 ---
-description: 'Expert code review specialist for quality, security, and maintainability. Use after writing or modifying code. Runs git diff, reads surrounding context, and reports only high-confidence findings with exact file/line citations. Returns zero findings when code is clean.'
+name: code-reviewer
+description: "Expert code review specialist for quality, security, and maintainability. Use after writing or modifying code. Runs git diff, reads surrounding context, and reports only high-confidence findings with exact file/line citations. Returns zero findings when code is clean."
 tools: [read, search, execute]
 ---
 

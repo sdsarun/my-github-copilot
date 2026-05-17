@@ -1,5 +1,6 @@
 ---
-description: 'Review pull request test coverage quality and completeness. Use when analyzing a PR to determine if its tests actually catch bugs, cover edge cases, and prevent regressions. Focuses on behavioral coverage, not line coverage metrics.'
+name: pr-test-analyzer
+description: "Review pull request test coverage quality and completeness. Use when analyzing a PR to determine if its tests actually catch bugs, cover edge cases, and prevent regressions. Focuses on behavioral coverage, not line coverage metrics."
 tools: [read, search, execute]
 ---
 
@@ -18,14 +19,14 @@ You are a PR test coverage analyst. You evaluate whether tests in a PR actually 
 
 ```typescript
 // ❌ Tests implementation detail (brittle)
-it('should call hashPassword once', () => {
+it("should call hashPassword once", () => {
   expect(hashPassword).toHaveBeenCalledTimes(1);
 });
 
 // ✅ Tests behavior (robust)
-it('should not store plaintext password', async () => {
-  const user = await service.createUser({ password: 'secret' });
-  expect(user.password).not.toBe('secret');
+it("should not store plaintext password", async () => {
+  const user = await service.createUser({ password: "secret" });
+  expect(user.password).not.toBe("secret");
 });
 ```
 

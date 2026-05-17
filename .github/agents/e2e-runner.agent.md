@@ -1,5 +1,6 @@
 ---
-description: 'End-to-end testing specialist using Playwright. Use for generating, running, and maintaining E2E tests for critical user flows. Manages test structure using Page Object Model, handles flaky tests, and uploads artifacts (screenshots, videos, traces).'
+name: e2e-runner
+description: "End-to-end testing specialist using Playwright. Use for generating, running, and maintaining E2E tests for critical user flows. Manages test structure using Page Object Model, handles flaky tests, and uploads artifacts (screenshots, videos, traces)."
 tools: [read, search, edit, execute]
 ---
 
@@ -21,17 +22,17 @@ export class LoginPage {
   constructor(private readonly page: Page) {}
 
   async goto() {
-    await this.page.goto('/login');
+    await this.page.goto("/login");
   }
 
   async login(email: string, password: string) {
-    await this.page.getByLabel('Email').fill(email);
-    await this.page.getByLabel('Password').fill(password);
-    await this.page.getByRole('button', { name: 'Sign in' }).click();
+    await this.page.getByLabel("Email").fill(email);
+    await this.page.getByLabel("Password").fill(password);
+    await this.page.getByRole("button", { name: "Sign in" }).click();
   }
 
   async expectError(message: string) {
-    await expect(this.page.getByRole('alert')).toContainText(message);
+    await expect(this.page.getByRole("alert")).toContainText(message);
   }
 }
 ```
@@ -40,22 +41,22 @@ export class LoginPage {
 
 ```typescript
 // tests/auth.spec.ts
-import { test, expect } from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage';
+import { test, expect } from "@playwright/test";
+import { LoginPage } from "../pages/LoginPage";
 
-test.describe('Authentication', () => {
-  test('successful login redirects to dashboard', async ({ page }) => {
+test.describe("Authentication", () => {
+  test("successful login redirects to dashboard", async ({ page }) => {
     const login = new LoginPage(page);
     await login.goto();
-    await login.login('user@example.com', 'password123');
-    await expect(page).toHaveURL('/dashboard');
+    await login.login("user@example.com", "password123");
+    await expect(page).toHaveURL("/dashboard");
   });
 
-  test('invalid credentials shows error', async ({ page }) => {
+  test("invalid credentials shows error", async ({ page }) => {
     const login = new LoginPage(page);
     await login.goto();
-    await login.login('user@example.com', 'wrong');
-    await login.expectError('Invalid credentials');
+    await login.login("user@example.com", "wrong");
+    await login.expectError("Invalid credentials");
   });
 });
 ```
@@ -65,15 +66,15 @@ test.describe('Authentication', () => {
 ```typescript
 // playwright.config.ts
 export default defineConfig({
-  testDir: './tests/e2e',
+  testDir: "./tests/e2e",
   retries: process.env.CI ? 2 : 0,
   use: {
-    baseURL: process.env.BASE_URL ?? 'http://localhost:3000',
-    screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
-    trace: 'on-first-retry'
+    baseURL: process.env.BASE_URL ?? "http://localhost:3000",
+    screenshot: "only-on-failure",
+    video: "retain-on-failure",
+    trace: "on-first-retry"
   },
-  reporter: process.env.CI ? 'github' : 'html'
+  reporter: process.env.CI ? "github" : "html"
 });
 ```
 

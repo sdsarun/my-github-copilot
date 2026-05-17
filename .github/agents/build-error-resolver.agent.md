@@ -1,5 +1,6 @@
 ---
-description: 'Build and compile error resolution specialist. Use when the build fails, type errors occur, or CI is red. Fixes build/type errors with minimal diffs only — no architectural changes. Focuses solely on getting the build green quickly.'
+name: build-error-resolver
+description: "Build and compile error resolution specialist. Use when the build fails, type errors occur, or CI is red. Fixes build/type errors with minimal diffs only — no architectural changes. Focuses solely on getting the build green quickly."
 tools: [read, search, edit, execute]
 ---
 
@@ -29,7 +30,7 @@ You are a build error resolution specialist. Your only job is to get the build g
 ```typescript
 // Error: Type 'string | undefined' is not assignable to type 'string'
 // Fix: Add assertion or guard
-const name = user.name ?? ''; // default value
+const name = user.name ?? ""; // default value
 const name = user.name!; // non-null assertion (only if certain)
 if (!user.name) return; // early return guard
 ```
@@ -39,7 +40,7 @@ if (!user.name) return; // early return guard
 ```typescript
 // Error: Property 'id' is missing in type '{name: string}'
 // Fix: Add the missing property or update the type
-const obj: User = { name: 'Alice', id: 1 }; // add the field
+const obj: User = { name: "Alice", id: 1 }; // add the field
 ```
 
 ### Implicit any
@@ -54,8 +55,8 @@ function fn(x: unknown) { ... }        // use unknown or specific type
 ```typescript
 // Error: Cannot find module './utils'
 // Check: file exists, path is correct, export is named/default correctly
-import { helper } from './utils'; // named export
-import helper from './utils'; // default export
+import { helper } from "./utils"; // named export
+import helper from "./utils"; // default export
 ```
 
 ## Common Build Errors

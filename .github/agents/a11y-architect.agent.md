@@ -1,5 +1,6 @@
 ---
-description: 'Accessibility specialist for WCAG 2.2 compliance. Use when designing UI components, reviewing front-end code, or auditing for inclusive user experiences. Covers ARIA, keyboard navigation, screen reader compatibility, color contrast, and focus management.'
+name: a11y-architect
+description: "Accessibility specialist for WCAG 2.2 compliance. Use when designing UI components, reviewing front-end code, or auditing for inclusive user experiences. Covers ARIA, keyboard navigation, screen reader compatibility, color contrast, and focus management."
 tools: [read, search]
 ---
 

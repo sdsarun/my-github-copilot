@@ -1,5 +1,6 @@
 ---
-description: 'Performance analysis and optimization specialist. Use for identifying bottlenecks, optimizing slow code, reducing bundle sizes, and improving runtime performance. Covers profiling, memory leaks, N+1 queries, render optimization, and algorithmic improvements.'
+name: performance-optimizer
+description: "Performance analysis and optimization specialist. Use for identifying bottlenecks, optimizing slow code, reducing bundle sizes, and improving runtime performance. Covers profiling, memory leaks, N+1 queries, render optimization, and algorithmic improvements."
 tools: [read, search, edit, execute]
 ---
 
@@ -25,7 +26,7 @@ for (const post of posts) {
 }
 
 // ✅ Single join query
-const posts = await Post.findAll({ include: [{ model: User, as: 'author' }] });
+const posts = await Post.findAll({ include: [{ model: User, as: "author" }] });
 ```
 
 ### Missing Database Indexes

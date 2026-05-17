@@ -1,5 +1,6 @@
 ---
-description: 'Deeply analyze existing codebase features by tracing execution paths, mapping architecture layers, and documenting dependencies. Use before starting large changes to understand how a feature works end-to-end.'
+name: code-explorer
+description: "Deeply analyze existing codebase features by tracing execution paths, mapping architecture layers, and documenting dependencies. Use before starting large changes to understand how a feature works end-to-end."
 tools: [read, search]
 ---
 

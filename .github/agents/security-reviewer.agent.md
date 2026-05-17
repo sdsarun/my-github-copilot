@@ -1,5 +1,6 @@
 ---
-description: 'Security vulnerability detection and remediation specialist. Use after writing code that handles user input, authentication, API endpoints, or sensitive data. Detects secrets, SSRF, injection, unsafe crypto, and OWASP Top 10 vulnerabilities.'
+name: security-reviewer
+description: "Security vulnerability detection and remediation specialist. Use after writing code that handles user input, authentication, API endpoints, or sensitive data. Detects secrets, SSRF, injection, unsafe crypto, and OWASP Top 10 vulnerabilities."
 tools: [read, search, execute]
 ---
 

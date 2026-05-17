@@ -1,5 +1,6 @@
 ---
-description: 'Review code for silent failures, swallowed errors, missing error propagation, bad fallbacks, and unreported exceptions. Use when auditing error handling quality or before production deploys.'
+name: silent-failure-hunter
+description: "Review code for silent failures, swallowed errors, missing error propagation, bad fallbacks, and unreported exceptions. Use when auditing error handling quality or before production deploys."
 tools: [read, search]
 ---
 
@@ -82,8 +83,8 @@ const price = apiResponse.data.price; // undefined if API changes
 try {
   await saveUser(data);
 } catch (error) {
-  logger.error('Failed to save user', { userId: data.id, error });
-  throw new DatabaseError('Failed to save user', { cause: error });
+  logger.error("Failed to save user", { userId: data.id, error });
+  throw new DatabaseError("Failed to save user", { cause: error });
 }
 
 // ✅ Explicit fallback with logging
@@ -91,7 +92,7 @@ async function getUsers() {
   try {
     return await db.users.findAll();
   } catch (error) {
-    logger.error('DB query failed, returning empty list', { error });
+    logger.error("DB query failed, returning empty list", { error });
     return []; // intentional, documented fallback
   }
 }

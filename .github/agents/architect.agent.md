@@ -1,5 +1,6 @@
 ---
-description: 'Software architecture specialist for system design, scalability, and technical decision-making. Use when planning new features, refactoring large systems, or making architectural decisions. Evaluates trade-offs and produces architecture diagrams and decision records.'
+name: architect
+description: "Software architecture specialist for system design, scalability, and technical decision-making. Use when planning new features, refactoring large systems, or making architectural decisions. Evaluates trade-offs and produces architecture diagrams and decision records."
 tools: [read, search]
 ---
 

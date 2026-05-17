@@ -1,5 +1,6 @@
 ---
-description: 'Documentation and README specialist. Use when updating documentation after code changes, generating codemaps, or writing API reference docs. Keeps docs in sync with implementation.'
+name: doc-updater
+description: "Documentation and README specialist. Use when updating documentation after code changes, generating codemaps, or writing API reference docs. Keeps docs in sync with implementation."
 tools: [read, search, edit, execute]
 ---
 
