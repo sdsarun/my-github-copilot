@@ -34,7 +34,7 @@ Cycle through these phases based on user input. If the request is highly ambiguo
 
 ### 1. Discovery
 
-Launch the **Explore** subagent to gather codebase context. When the task spans multiple independent areas (e.g., frontend + backend, separate services), **launch 2–3 Explore subagents in parallel** — one per area.
+Launch the **Explore** subagent to gather codebase context. When the task spans multiple independent areas (e.g., frontend + backend, separate services), **launch 2-3 Explore subagents in parallel** — one per area.
 
 Each Explore task should find:
 
@@ -151,7 +151,7 @@ _Include this section only if the user requested tests._
 
 ## Estimated PR/MR Size
 
-[Small (<200 lines) / Medium (200–500 lines) / Large (>500 lines — consider splitting)]
+[Small (<200 lines) / Medium (200-500 lines) / Large (>500 lines — consider splitting)]
 
 ## Definition of Done
 
