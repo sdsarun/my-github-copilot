@@ -8,6 +8,31 @@ This means you can have different rules activate automatically depending on whic
 
 ---
 
+## Where to Put Them
+
+**Default location:** `.github/instructions/` — VS Code searches this folder **recursively**.
+
+This is the only folder VS Code looks in by default. Do not put them at the project root or in random locations — they will not be discovered.
+
+```
+your-project/
+└── .github/
+    └── instructions/
+        ├── core/
+        │   ├── general.instructions.md       ← applyTo: **
+        │   └── error-handling.instructions.md
+        ├── testing/
+        │   └── testing.instructions.md       ← applyTo: **/*.test.ts
+        └── security/
+            └── security.instructions.md      ← applyTo: **/auth/**
+```
+
+VS Code explicitly supports — and recommends — organizing instructions in subdirectories. The recursion means any nesting structure works.
+
+> **If you want to add other locations**, configure `chat.instructionsFilesLocations` in VS Code settings. But `.github/instructions/` is always discovered by default without any extra config.
+
+---
+
 ## How the `applyTo` Pattern Works
 
 The pattern is a glob. Examples:
@@ -22,53 +47,18 @@ applyTo: "**/*.test.ts,**/*.test.js,**/*.spec.ts"
 # Apply only to files in the routes folder
 applyTo: "**/routes/**,**/api/**"
 
-# Apply only to specific files
+# Apply only to specific folders
 applyTo: "src/auth/**,src/payment/**"
 
 # Apply to a specific language
-applyTo: "**/*.py"
-```
-
----
-
-## Where to Put Them
-
-You can put `.instructions.md` files anywhere in your project. VS Code discovers them by scanning for files that match the pattern relative to your workspace root.
-
-The convention used in this toolkit is to put them in an `instructions/` folder:
-
-```
-your-project/
-├── instructions/
-│   ├── general.instructions.md      ← applies to all files
-│   ├── testing.instructions.md      ← applies to *.test.* files
-│   ├── api.instructions.md          ← applies to routes/ and api/ folders
-│   └── security.instructions.md     ← applies to auth/ and payment/
-```
-
-But you can also put them in the root:
-
-```
-your-project/
-├── general.instructions.md
-├── testing.instructions.md
-```
-
-Or co-located with the code:
-
-```
-your-project/
-├── src/
-│   ├── auth/
-│   │   ├── .instructions.md         ← only loads when editing auth files
-│   │   └── authService.ts
+applyTo: "**/*.go"
 ```
 
 ---
 
 ## The Instructions Files in This Toolkit
 
-### `general.instructions.md`
+### `core/general.instructions.md`
 
 **Pattern:** `**` (all files)
 
@@ -81,7 +71,31 @@ Always loaded. Contains the baseline coding standards:
 - Size limits (50-line functions, 800-line files)
 - No hardcoded values rule
 
-### `testing.instructions.md`
+### `core/error-handling.instructions.md`
+
+**Pattern:** `**` (all files)
+
+Always loaded alongside `general.instructions.md`. Contains:
+
+- Never silently swallow errors
+- Two-audience rule: users see friendly messages, developers see full context
+- Result / Either pattern examples
+- Wrapping errors with context on rethrow
+- Logging rules (log where handled, include structured fields, never log sensitive data)
+- HTTP status code reference for API error responses
+
+### `git/git.instructions.md`
+
+**Pattern:** `**` (all files)
+
+Always loaded. Contains:
+
+- Conventional commit format (feat/fix/refactor/test/docs/chore/perf/ci)
+- Branch naming convention (`<type>/<short-description>`)
+- Pull request rules (one logical change, all CI checks pass)
+- History hygiene (interactive rebase before PR, no force-push to shared branches)
+
+### `testing/testing.instructions.md`
 
 **Pattern:** `**/*.test.ts, **/*.test.js, **/*.spec.ts, **/*.spec.js, **/__tests__/**`
 
@@ -94,7 +108,18 @@ Loads when you open any test file. Contains:
 - What not to do (skip, comment-out, always-passing assertions)
 - Mocking rules (mock at system boundaries, not internals)
 
-### `api.instructions.md`
+### `testing/e2e.instructions.md`
+
+**Pattern:** `**/e2e/**, **/*.spec.ts, **/*.spec.js, **/playwright/**, **/tests/e2e/**`
+
+Loads when you edit Playwright E2E test files. Contains:
+
+- Page Object Model (POM) structure with full example
+- Selector priority (data-testid → ARIA roles → text → CSS)
+- Waiting rules (never `waitForTimeout`, always wait for specific conditions)
+- Test independence requirements (no shared state between tests)
+
+### `architecture/api.instructions.md`
 
 **Pattern:** `**/routes/**, **/api/**, **/controllers/**, **/handlers/**`
 
@@ -107,7 +132,7 @@ Loads when you open any route or handler file. Contains:
 - Pagination format
 - Security checklist
 
-### `security.instructions.md`
+### `security/security.instructions.md`
 
 **Pattern:** `**/auth/**, **/payment/**, **/billing/**, **/admin/**, **/middleware/**`
 
@@ -120,7 +145,7 @@ Loads when you open sensitive security-relevant files. Contains:
 - Error response scrubbing rules
 - Pre-commit security checklist
 
-### `backend.instructions.md`
+### `backend/backend.instructions.md`
 
 **Pattern:** `**/services/**, **/repositories/**, **/middleware/**, **/server/**, **/lib/**`
 
@@ -129,11 +154,10 @@ Loads when you edit service or repository files. Contains:
 - Layer boundary rules (route → service → repository → DB, no crossing)
 - Repository pattern interface example
 - Service layer rules (one service per domain, no raw DB calls)
-- Middleware pattern (auth middleware, never trust client-supplied user IDs)
 - Error propagation (let errors bubble up, handle at route level)
 - Caching rules (always set TTL, cache at service layer, invalidate on write)
 
-### `frontend.instructions.md`
+### `frontend/frontend.instructions.md`
 
 **Pattern:** `**/components/**, **/*.tsx, **/pages/**, **/app/**, **/hooks/**`
 
@@ -143,48 +167,10 @@ Loads when you edit React components, pages, or custom hooks. Contains:
 - State rules (useState vs useReducer, no derived state in state, no mutation)
 - Data fetching patterns (React Query / SWR over raw useEffect)
 - Performance rules (React.memo, useMemo, useCallback, no inline objects as props)
-- Virtualization for long lists
 - Custom hooks pattern
 - Accessibility baseline
 
-### `e2e.instructions.md`
-
-**Pattern:** `**/e2e/**, **/*.spec.ts, **/*.spec.js, **/playwright/**, **/tests/e2e/**`
-
-Loads when you edit Playwright E2E test files. Contains:
-
-- Page Object Model (POM) structure with full example
-- Selector priority (data-testid → ARIA roles → text → CSS)
-- Waiting rules (never `waitForTimeout`, always wait for specific conditions)
-- Test independence requirements (no shared state between tests)
-- What to test in E2E vs unit/integration
-- Flaky test handling
-
-### `git.instructions.md`
-
-**Pattern:** `**` (all files)
-
-Always loaded alongside `general.instructions.md`. Contains:
-
-- Conventional commit format (feat/fix/refactor/test/docs/chore/perf/ci)
-- Branch naming convention (`<type>/<short-description>`)
-- Pull request rules (one logical change, all CI checks pass)
-- History hygiene (interactive rebase before PR, no force-push to shared branches)
-
-### `error-handling.instructions.md`
-
-**Pattern:** `**` (all files)
-
-Always loaded. Contains:
-
-- Never silently swallow errors
-- Two-audience rule: users see friendly messages, developers see full context
-- Result / Either pattern examples
-- Wrapping errors with context on rethrow
-- Logging rules (log where handled, include structured fields, never log sensitive data)
-- HTTP status code reference for API error responses
-
-### `golang.instructions.md`
+### `languages/go/golang.instructions.md`
 
 **Pattern:** `**/*.go`
 
@@ -195,35 +181,8 @@ Loads when you edit any Go file. Contains:
 - Error wrapping with `fmt.Errorf("context: %w", err)`
 - Sentinel errors and custom error types
 - Goroutine ownership and cancellation with `context.Context`
-- `gofmt` and zero-value design principles
 
-### `rust.instructions.md`
-
-**Pattern:** `**/*.rs`
-
-Loads when you edit any Rust file. Contains:
-
-- Prefer references over cloning
-- `anyhow` for applications, `thiserror` for libraries
-- Use `?` for error propagation, never unwrap in production
-- `impl Trait` vs `Box<dyn Trait>` decision guide
-- Async with tokio, `spawn_blocking` for CPU-bound work
-- `unsafe` block scope discipline
-
-### `python.instructions.md`
-
-**Pattern:** `**/*.py`
-
-Loads when you edit any Python file. Contains:
-
-- PEP 8 with `ruff` or `flake8`
-- Type annotations on all function signatures
-- EAFP (try/except) over LBYL (check before access)
-- Mutable default argument anti-pattern
-- Explicit logging configuration with `logging.getLogger(__name__)`
-- `pytest` with fixtures and `parametrize`
-
-### `docker.instructions.md`
+### `devops/docker.instructions.md`
 
 **Pattern:** `**/Dockerfile, **/Dockerfile.*, **/docker-compose*.yml, **/.dockerignore`
 
@@ -233,95 +192,78 @@ Loads when you edit Docker or Compose files. Contains:
 - Multi-stage build pattern
 - Non-root user for runtime stage
 - Named volumes (never anonymous)
-- Health checks on service dependencies
-- No secrets in Dockerfile or Compose — use `.env` files and secrets managers
+- No secrets in Dockerfile — use `.env` files and secrets managers
 
-### `migrations.instructions.md`
+### `devops/deployment.instructions.md`
 
-**Pattern:** `**/migrations/**, **/db/migrations/**, **/database/migrations/**, **/alembic/**`
+**Pattern:** `**/k8s/**, **/.github/workflows/**, **/terraform/**`
 
-Loads when you edit database migration files. Contains:
+Loads when you edit Kubernetes, GitHub Actions, or Terraform files.
 
-- Forward-only migrations (never edit merged migration files)
-- Reversible migrations with `down` / `downgrade`
-- Expand-contract pattern for column removal and renames
-- `CREATE INDEX CONCURRENTLY` for production databases
-- One logical change per migration file
-- Migration testing in CI
+### `database/postgres.instructions.md`
 
-### `deployment.instructions.md`
+**Pattern:** `**/*.sql, **/migrations/**, **/db/**`
 
-**Pattern:** `**/deploy/**, **/k8s/**, **/kubernetes/**, **/terraform/**, **/.github/workflows/**, **/helm/**`
+### `database/prisma.instructions.md`
 
-Loads when you edit deployment and infrastructure files. Contains:
+**Pattern:** `**/schema.prisma, **/prisma/**`
 
-- Deployment strategy guide (Rolling / Blue-Green / Canary / Feature Flags)
-- Kubernetes resource limits, readiness/liveness probes, PodDisruptionBudget
-- CI/CD rules (never deploy without passing tests, immutable artifact tags)
-- Terraform remote state and module conventions
-- Secrets manager usage (never in source control or CI plain text)
+### `database/migrations.instructions.md`
+
+**Pattern:** `**/migrations/**`
+
+Contains: forward-only migrations, expand-contract pattern, `CREATE INDEX CONCURRENTLY`.
+
+### `database/redis.instructions.md`
+
+**Pattern:** `**/redis/**, **/cache/**`
+
+### `code-quality/vite.instructions.md`
+
+**Pattern:** `**/vite.config.*`
+
+### Framework instructions
+
+| File | Pattern |
+|---|---|
+| `frameworks/nestjs/nestjs.instructions.md` | `**/*.module.ts, **/*.controller.ts, **/*.service.ts` |
+| `frameworks/nextjs/nextjs.instructions.md` | `**/app/**, **/pages/**, **/layout.tsx` |
+| `frameworks/angular/angular.instructions.md` | `**/*.component.ts, **/*.service.ts` |
 
 ---
 
-## How to Create Your Own
+## File Format
 
-### Step 1 — Create the file
-
-```markdown
+```yaml
 ---
-applyTo: '**/services/**'
+name: "Testing Standards"
+description: "Test structure and TDD rules for test files"
+applyTo: "**/*.test.ts,**/*.spec.ts"
 ---
 
-# Service Layer Standards
+# Testing Standards
 
-Rules that apply when editing service files.
-
-## Dependency Injection
-
-Always inject dependencies through the constructor...
-
-## Transaction Handling
-
-Wrap multiple database writes in a transaction...
+Always use AAA structure...
 ```
 
-### Step 2 — Name it descriptively
-
-Use the format `description.instructions.md`. Good names:
-
-- `services.instructions.md`
-- `database.instructions.md`
-- `components.instructions.md`
-- `python.instructions.md`
-
-### Step 3 — Verify it loads
-
-Open a file that matches your pattern, then ask Copilot a question. The answer should reflect your instructions.
+| Field | Required | What it does |
+|---|---|---|
+| `name` | No | Display name in the UI. Defaults to filename |
+| `description` | No | Short description shown on hover |
+| `applyTo` | No | Glob pattern for auto-application. If omitted, the file is never applied automatically |
 
 ---
 
-## Tips
+## Verification
 
-- **Be specific in the `applyTo` pattern** — if you use `**` for everything, you can get conflicts. Use the general instructions file for universal rules and specific files for narrower concerns.
-- **Include code examples** — rules with `// WRONG` / `// CORRECT` examples are much more effective than prose descriptions alone.
-- **Keep each file focused** — one topic per instructions file is easier to maintain.
-- **Use multiple patterns** — separate patterns with commas: `applyTo: "**/auth/**,**/session/**"`
+To check which instruction files are loaded:
 
----
-
-## Combining All Three Layers
-
-When Copilot answers a question, it combines:
-
-1. `copilot-instructions.md` — always loaded
-2. Any `.instructions.md` files whose patterns match the current file
-3. The prompt file (if you invoked a slash command)
-4. Any files or context you explicitly attached
-
-This layering means the more context you give Copilot about what you are doing, the more precisely it can follow your project's rules.
+1. Open Copilot Chat
+2. Right-click in the chat panel and select **Diagnostics**
+3. You will see all loaded instruction files and any errors
 
 ---
 
 ## Next Steps
 
-Continue to [05-everyday-workflows.md](05-everyday-workflows.md) for real-world developer workflows showing how to combine all three layers.
+Continue to [05-everyday-workflows.md](05-everyday-workflows.md) for real developer workflows using these tools together.

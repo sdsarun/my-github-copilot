@@ -283,15 +283,44 @@ Because your `copilot-instructions.md` is loaded, Copilot knows your project's c
 
 ---
 
+## Scenario 9 — Switching to a Specialized Agent
+
+**Situation:** You need focused help for a specific role — planning a feature, doing a security review, or guiding a TDD session — without manually managing which tools and instructions are active.
+
+### Step 1 — Open the agent dropdown
+
+In the Copilot Chat panel, click the agent dropdown (shows the current agent name). You will see all custom agents from `.github/agents/`.
+
+### Step 2 — Switch to the right agent for the task
+
+| Task                   | Switch to                                                       |
+| ---------------------- | --------------------------------------------------------------- |
+| Planning a feature     | **planner** — read-only tools, focuses on research and planning |
+| Deep code review       | **code-reviewer** — systematic quality and security review      |
+| Security analysis      | **security-reviewer** — OWASP-focused, no editing tools         |
+| TDD session            | **tdd-guide** — enforces test-first, guides the cycle           |
+| Architecture decisions | **architect** — high-level design and tradeoff analysis         |
+| E2E test writing       | **e2e-runner** — Playwright patterns, POM structure             |
+
+### Step 3 — Work in context
+
+The agent's instructions and tool restrictions are now in effect. When you are done, switch back to the default agent or pick another.
+
+```
+Example: Switch to planner → /plan my feature → switch to tdd-guide → /tdd for each component
+```
+
+---
+
 ## Daily Habit Checklist
 
 Pin this to your desk or set it as a browser tab:
 
 ```
-Starting a feature?    → /plan first
-Writing any code?      → /tdd — test before implementation
-Done writing?          → /code-review before committing
-Sensitive code?        → /security-review
+Starting a feature?    → switch to planner agent, then /plan
+Writing any code?      → switch to tdd-guide, then /tdd
+Done writing?          → switch to code-reviewer, then /code-review
+Sensitive code?        → switch to security-reviewer
 Build broken?          → /build-fix
 Code messy?            → /refactor
 New API endpoints?     → /api-design
@@ -301,4 +330,4 @@ New API endpoints?     → /api-design
 
 ## Next Steps
 
-Continue to [06-advanced.md](06-advanced.md) for advanced patterns including customizing this toolkit for your team.
+Continue to [06-advanced.md](06-advanced.md) for advanced patterns including agents, skills, and combining context for precision.

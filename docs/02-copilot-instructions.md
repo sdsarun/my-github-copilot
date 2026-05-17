@@ -16,6 +16,18 @@ This is the VS Code / GitHub Copilot equivalent of briefing your team:
 
 > "In this project, we always validate inputs with Zod, we never hardcode secrets, we write tests before code, and we use conventional commits."
 
+### Instruction Priority
+
+When multiple instruction sources exist, they are all provided to the AI. If conflicts occur, higher-priority instructions win:
+
+1. Personal instructions (user-level — your profile settings) — highest priority
+2. Repository instructions (`.github/copilot-instructions.md` or `AGENTS.md`)
+3. Organization instructions — lowest priority
+
+### Alternative: `AGENTS.md`
+
+VS Code also supports an `AGENTS.md` file at the root of your workspace as an alternative to `copilot-instructions.md`. Use `AGENTS.md` when you work with multiple AI agents (Copilot, Claude, etc.) and want a single instruction file recognized by all of them.
+
 ---
 
 ## What Ours Contains
@@ -132,7 +144,9 @@ To verify it is working:
 2. Ask: "What coding standards do you follow in this project?"
 3. Copilot should answer based on your rules, not generic advice
 
-If it does not, check that the file is at `.github/copilot-instructions.md` (not in a subfolder).
+If it does not work, check:
+- The file is at `.github/copilot-instructions.md` (not in a subfolder)
+- Right-click in the Chat view and select **Diagnostics** to see which instruction files are loaded
 
 ---
 
